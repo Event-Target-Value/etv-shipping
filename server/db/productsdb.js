@@ -14,18 +14,38 @@ db.once('open', () => {
 // /products/:id
 const productSchema = mongoose.Schema({
   productId: Number,
-  recommended: Array,
+  recommended: [{ name: String, price: Number, recImage: String }],
   price: Number,
   zip: Array,
   image: String,
 });
 
 
-const Products = mongoose.model('Products', productSchema);
+const Product = mongoose.model('Products', productSchema);
 
+const save = (productData, callback) => {
+  const productDocs = [];
+
+  productData.forEach((asource) => {
+    let oneProduct = new Product();
+    let newDoc = Object.assign(oneProduct, asource);
+    productDocs.push(newDoc);
+  });
+  console.log(productDocs.length);
+
+
+  Product.insertMany(productDocs, (err, docs) => {
+    if (err) {
+      callback(err, null);
+    } else {
+      callback(null, docs);
+    }
+  });
+  console.log('SAVED');
+};
 
 const findAllProducts = (callback) => {
-  Products.find({}).exec((err, allProducts) => {
+  Product.find({}).exec((err, allProducts) => {
     if (err) {
       callback(err, null);
     } else {
@@ -35,7 +55,7 @@ const findAllProducts = (callback) => {
 };
 
 const findProduct = (search, callback) => {
-  Products.find(search).exec((err, results) => {
+  Product.find(search).exec((err, results) => {
     if (err) {
       callback(err, null);
     } else {
