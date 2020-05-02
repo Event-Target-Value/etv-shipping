@@ -24,14 +24,11 @@ const save = (productData, callback) => {
     let newDoc = Object.assign(oneProduct, asource);
     productDocs.push(newDoc);
   });
-  console.log(productDocs.length);
-
 
   Product.insertMany(productDocs, (err, docs) => {
     if (err) {
       callback(err, null);
     } else {
-      console.log('InsertMany');
       callback(null, docs);
     }
   });
@@ -57,6 +54,11 @@ const findProduct = (search, callback) => {
   });
 };
 
+const drop = () => {
+  Product.collection.drop();
+};
+
 module.exports.findAllProducts = findAllProducts;
 module.exports.findProduct = findProduct;
 module.exports.save = save;
+module.exports.drop = drop;
