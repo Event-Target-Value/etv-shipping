@@ -1,15 +1,8 @@
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/target', { useNewUrlParser: true });
+mongoose.connect('mongodb://localhost/target', { useNewUrlParser: true, useUnifiedTopology: true });
 
 const db = mongoose.connection;
-
-db.once('open', () => {
-  console.log(
-    'CONNECTED TO MONGO DATABASE',
-  );
-});
-
 
 // /products/:id
 const productSchema = mongoose.Schema({
@@ -38,10 +31,10 @@ const save = (productData, callback) => {
     if (err) {
       callback(err, null);
     } else {
+      console.log('InsertMany');
       callback(null, docs);
     }
   });
-  console.log('SAVED');
 };
 
 const findAllProducts = (callback) => {
@@ -63,7 +56,6 @@ const findProduct = (search, callback) => {
     }
   });
 };
-
 
 module.exports.findAllProducts = findAllProducts;
 module.exports.findProduct = findProduct;

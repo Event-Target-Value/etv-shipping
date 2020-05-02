@@ -1,39 +1,150 @@
+const randomProductNameA = () => {
+  const randomTopic = [
+    'Technical',
+    'Winter Technical',
+    'Futuristic',
+    'Functional',
+    'MA-1',
+    'Military Style',
+    'Climate Cool',
+    'Silver Anti-Bacterial',
+    'Reinforced',
+  ];
+  const randomClothing = [
+    'Cotton Noragi',
+    'Nylon Noragi',
+    'Ny/Co Noragi',
+    'Goretex Noragi',
+    'Jersey Noragi',
+    'Ripstop Noragi',
+  ];
+  let randomized = (min, max) => {
+    return Math.floor(Math.random() * (max - min) + min);
+  };
+  return randomTopic[randomized(0,9)] + ' ' + randomClothing[randomized(0,6)];
+};
+
+const randomProductNameB = () => {
+  const randomTopic = [
+    'Cargo',
+    'Technical Cargo',
+    'Utility',
+    'Parachute',
+    'Utilitarian',
+    'Multi-purpose',
+    'Futuristic',
+    'Paratrooper',
+    'Medical',
+  ];
+  const randomClothing = [
+    'Ripstop Pants',
+    'NyCo Pants',
+    'Goretex Pants',
+    'Summer Pants',
+    'Heat-tech Pants',
+    'Fire Pants',
+  ];
+  let randomized = (min, max) => {
+    return Math.floor(Math.random() * (max - min) + min);
+  };
+  return randomTopic[randomized(0,9)] + ' ' + randomClothing[randomized(0,6)];
+};
+
+const randomProductNameC = () => {
+  const randomTopic = [
+    'Cooling',
+    'Climate-Cool',
+    'Summer',
+    'Moisture-Wicking',
+    'Anti-Bacterial',
+    'Odor Control',
+    'Active Cooling',
+    'Training',
+    'Sports',
+  ];
+  const randomClothing = [
+    'Cotton Shirt',
+    'Workout Shirt',
+    'Jersey Shirt',
+    'Breathable Shirt',
+    'Rip-resistant Shirt',
+    'Exercize Shirt',
+  ];
+  let randomized = (min, max) => {
+    return Math.floor(Math.random() * (max - min) + min);
+  };
+  return randomTopic[randomized(0,9)] + ' ' + randomClothing[randomized(0,6)];
+};
+
+
+const randomPrice = () => {
+  return Number((Math.random() * (80.99 - 1.99) + 1.99).toFixed(2));
+};
+
+
+const randomZipCodes = () => {
+  let zipcodes = [];
+  let randomTotalZips = Math.floor(Math.random() * (50 - 10) + 10);
+  while (randomTotalZips > 0) {
+    let newZip = Math.floor(Math.random() * (95000 - 94000) + 94000);
+    zipcodes.push(newZip);
+    randomTotalZips--
+  }
+  return zipcodes;
+};
+
+// RANDOMRECOMMENDATIONS
+// const randomRecommended = () => {
+//   let recoms = [];
+//   let randomRecoms = (Math.floor(Math.random() * (12 - 3) + 3));
+//   while (randomRecoms > 0) {
+//     let object = {
+//       name: randomProductName(),
+//       price: randomPrice(),
+//       recImage: 'URL'
+//     }
+//   }
+// }
+
 const dummyData = [
   {
     productId: 100,
-    recommended: [{ name: 'Altered Carbon T-SHIRT', price: 30.99, recImage: 'Image1' }, { name: 'Black Mirror T-SHIRT', price: 31.99, recImage: 'Image2' }, { name: 'Appleseed T-SHIRT', price: 29.99, recImage: 'Image3' }, { name: 'Psycho-Pass T-SHIRT', price: 32.99, recImage: 'Image4' }, { name: 'Gantz T-SHIRT', price: 33.99, recImage: 'Image5' }],
-    price: 24.99,
-    zip: [94102, 94103, 94104, 94105, 94106, 94107, 94108, 94109, 94110, 94111, 94112, 94117, 94118, 94120, 94122],
-    image: 'AWS IMAGE URL',
+    recommended: [],
+    price: randomPrice(),
+    zip: randomZipCodes(),
+    image: 'AWS IMAGE URL 0',
   },
   {
     productId: 200,
-    recommended: [{ name: 'Apple', price: 11, recImage: 'Image4' }, { name: 'Banana', price: 14, recImage: 'Image5' }, { name: 'Orange', price: 15, recImage: 'Image6' }],
-    price: 500,
-    zip: [22342, 22345, 26578, 62423, 60123, 69246],
-    image: 'AWS IMAGE URL 2',
+    recommended: [],
+    price: randomPrice(),
+    zip: randomZipCodes(),
+    image: 'AWS IMAGE URL 1',
   },
   {
     productId: 300,
-    recommended: [{ name: 'Chair', price: 800, recImage: 'Image7' }, { name: 'Desk', price: 600, recImage: 'Image8' }, { name: 'Table', price: 400, recImage: 'Image9' }],
-    price: 40.40,
-    zip: [82342, 82345, 87578, 80423, 80123, 89246],
-    image: 'AWS IMAGE URL 3',
+    recommended: [],
+    price: randomPrice(),
+    zip: randomZipCodes(),
+    image: 'AWS IMAGE URL 2',
   },
   {
     productId: 400,
-    recommended: [{ name: 'Chair', price: 800, recImage: 'Image7' }, { name: 'Desk', price: 600, recImage: 'Image8' }, { name: 'Table', price: 400, recImage: 'Image9' }],
-    price: 40.40,
-    zip: [82342, 82345, 87578, 80423, 80123, 89246],
+    recommended: [],
+    price: randomPrice(),
+    zip: randomZipCodes(),
     image: 'AWS IMAGE URL 3',
   },
   {
     productId: 500,
-    recommended: [{ name: 'Chair', price: 800, recImage: 'Image7' }, { name: 'Desk', price: 600, recImage: 'Image8' }, { name: 'Table', price: 400, recImage: 'Image9' }],
-    price: 40.40,
-    zip: [82342, 82345, 87578, 80423, 80123, 89246],
-    image: 'AWS IMAGE URL 3',
+    recommended: [],
+    price: randomPrice(),
+    zip: randomZipCodes(),
+    image: 'AWS IMAGE URL 4',
   },
 ];
 
+console.log(dummyData);
+
 module.exports.dummyData = dummyData;
+

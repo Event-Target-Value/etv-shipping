@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build-r": "webpack -d --watch",
     "react-server": "live-server",
-    "start": "nodemon server/index.js"
+    "start": "nodemon server/index.js",
+    "seed": "node server/db/seeder.js"
   },
   "repository": {
     "type": "git",
