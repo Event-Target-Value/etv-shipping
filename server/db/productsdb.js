@@ -44,15 +44,7 @@ const findAllProducts = (callback) => {
   });
 };
 
-const findProduct = (search, callback) => {
-  Product.find(search).exec((err, results) => {
-    if (err) {
-      callback(err, null);
-    } else {
-      callback(null, results);
-    }
-  });
-};
+const findProduct = (id, callback) => Product.findOne({ productId: id }, callback);
 
 const drop = () => {
   Product.collection.drop();
