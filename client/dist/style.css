@@ -76,7 +76,6 @@ h1 {
 
 
 #showModal {
-  position: center;
   display: flex;
   border: 0;
   background: red;

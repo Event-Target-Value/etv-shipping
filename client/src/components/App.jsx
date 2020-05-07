@@ -50,6 +50,7 @@ class App extends React.Component {
     <div className="App">
       <h1>PRODUCT SHIPPING COMPONENT</h1>
       {/* <img className ="mainProduct" src={this.state.product.image}></img> */}
+      <div>Deliver to {this.state.currentZip}</div>
       <Modal product={this.state.product} show={this.state.show} closeModal={this.closeModal}></Modal>
         <button className = "showModal" id="showModal" onClick = {e => {
           this.showModal(e);

@@ -15,5 +15,16 @@ let controller = {
       }
     });
   },
+  getAllLocal: (req, res) => {
+    findAllProducts((err, results) => {
+      if (err) {
+        console.log(err);
+        res.sendStatus(500);
+      } else {
+        console.log('get-all request: processed');
+        return results.toObject();
+      }
+    });
+  },
 };
 module.exports = controller;

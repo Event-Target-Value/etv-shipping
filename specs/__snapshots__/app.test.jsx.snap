@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<App /> React App functional and correctly rendering 1`] = `
+<div
+  className="App"
+>
+  <h1>
+    PRODUCT SHIPPING COMPONENT
+  </h1>
+  <div>
+    Deliver to 
+    94112
+  </div>
+  <Modal
+    closeModal={[Function]}
+    product={Object {}}
+    show={false}
+  />
+  <button
+    className="showModal"
+    id="showModal"
+    onClick={[Function]}
+  >
+     Ship it 
+  </button>
+</div>
+`;
+
+exports[`<Modal /> Modal functional and correctly rendering 1`] = `""`;
