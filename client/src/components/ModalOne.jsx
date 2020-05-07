@@ -1,4 +1,5 @@
 import React from "react";
+import Recoms from "./Recoms.jsx"
 
 
 export default class Modal extends React.Component {
@@ -10,13 +11,21 @@ export default class Modal extends React.Component {
       return null;
     }
     return (
-      <div class = "modal" id="modal">
-        <h2>Modal Window</h2>
-        <div class="content">{this.props.children}</div>
-        <div class = "actions">
-          <button class = "toggle-button" onClick = {this.onClose}>
-            close
+      <div className = "modal" id="modal">
+        <div>Added to cart</div>
+        <div> Edit delivery method in cart</div>
+        <div>${this.props.product.price}</div>
+        <img className ="productImage" src={this.props.product.image}></img>
+        <div className ="content">{this.props.children}</div>
+        <div className = "actions">
+          <button className = "toggle-button" onClick = {this.props.closeModal}>
+            Continue Shopping
           </button>
+          <button className = "check-out">View cart &amp; checkout</button>
+        </div>
+        <div className = "recoms">
+        {this.props.product.recommended.map((oneRecom) =>
+        <Recoms key={oneRecom._id} oneRecom={oneRecom} product= {this.props.product}/>)}
         </div>
       </div>
     );
