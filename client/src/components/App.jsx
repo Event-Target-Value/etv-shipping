@@ -16,7 +16,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    this.getProduct(50);
+    this.getProduct(Math.floor(Math.random() * (101 - 1) + 1));
   }
 
   handleError(error) {

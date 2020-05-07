@@ -24,6 +24,7 @@ export default class Modal extends React.Component {
           <button className = "check-out">View cart &amp; checkout</button>
         </div>
         <div className = "recoms">
+          FREQUENTLY BOUGHT TOGETHER
         {this.props.product.recommended.map((oneRecom) =>
         <Recoms key={oneRecom._id} oneRecom={oneRecom} product= {this.props.product}/>)}
         </div>
