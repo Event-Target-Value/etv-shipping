@@ -15,16 +15,21 @@ describe('<App />', () => {
       const wrapper = shallow(<App />);
       expect(wrapper.find('.zip').text()).toEqual("Deliver to 94112")
     })
+
+    it('Renders the zipcode based on submission', () => {
+      const wrapper = shallow(<App />);
+      expect(wrapper.find('.zip').text()).toEqual("Deliver to 94112")
+    })
 });
 
 
 
-describe('<Modal />', () => {
-  it('Modal functional and correctly rendering', () => {
-   const wrapper = shallow(<Modal />);
-   expect(wrapper).toMatchSnapshot();
-  });
-});
+// describe('<Modal />', () => {
+//   it('Modal functional and correctly rendering', () => {
+//    const wrapper = shallow(<Modal />);
+//    expect(wrapper).toMatchSnapshot();
+//   });
+// });
 
 
 

@@ -48,5 +48,3 @@ exports[`<App /> React App functional and correctly rendering 1`] = `
   </button>
 </div>
 `;
-
-exports[`<Modal /> Modal functional and correctly rendering 1`] = `""`;

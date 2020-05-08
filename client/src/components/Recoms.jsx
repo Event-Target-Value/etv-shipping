@@ -14,4 +14,6 @@ const Recoms= (props) => (
 // React refs
 // z-index
 
+
+//refactor Recoms to > Recommendations
 export default Recoms;

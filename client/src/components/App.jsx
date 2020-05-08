@@ -1,5 +1,6 @@
 import React from 'react';
 import Modal from './ModalOne.jsx';
+import Zipcode from './Zipcode.jsx';
 import axios from 'axios';
 
 class App extends React.Component {
@@ -8,12 +9,14 @@ class App extends React.Component {
     this.state = {
       product: {},
       currentZip: 94112,
-      show: false
+      show: false,
+      showZip: false
     };
     this.closeModal = this.closeModal.bind(this);
     this.getProduct = this.getProduct.bind(this);
     this.setProduct = this.setProduct.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.showZipcode = this.showZipcode.bind(this);
   }
 
   componentDidMount() {
@@ -46,26 +49,31 @@ class App extends React.Component {
     });
   };
 
-  handleSubmit(event) {
-    event.preventDefault();
-    let newZip = parseInt(document.getElementById("zipcode").value);
-    this.setState({currentZip: newZip});
-    // this.setState({currentZip: parseInt((event.target.value))})
+  showZipcode = e => {
+    e.preventDefault();
+    this.setState({
+      showZip: true
+    });
   };
 
+  handleSubmit(e) {
+    e.preventDefault();
+    let newZip = parseInt((document.getElementById("zipcode").value).slice(0,5));
+    this.setState({currentZip: newZip, showZip: false});
+    // this.setState({currentZip: parseInt((event.target.value))})
+  };
 
 
   render () {
     return (
     <div className="App">
       <h1>PRODUCT SHIPPING COMPONENT</h1>
-      {/* <img className ="mainProduct" src={this.state.product.image}></img> */}
       <div className = "zip">Deliver to {this.state.currentZip}</div>
-      <form id="zipForm" className="zipForm" onSubmit={event => {this.handleSubmit(event)}}>
-        <label htmlFor="zipcode"> Zip Code</label>
-        <input type="text" name="zipcode" id="zipcode" />
-        <button type="submit">Submit</button>
-      </form>
+      <button className = "showZip" id = "showZip" onClick = {e => {
+        this.showZipcode(e)
+      }}>Edit zip code</button>
+      <Zipcode
+      handleSubmit = {this.handleSubmit} showZip = {this.state.showZip}></Zipcode>
       <Modal product={this.state.product} show={this.state.show} closeModal={this.closeModal}></Modal>
         <button className = "showModal" id="showModal" onClick = {e => {
           this.showModal(e)

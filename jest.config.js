@@ -22,5 +22,7 @@ module.exports = {
   },
   transform: {
     "^.+\\.jsx$": "babel-jest",
+    "^.+\\.js$": "babel-jest",
+    ".+\\.(css|styl|less|sass|scss|jpeg|png|jpg|ttf|woff|woff2)$": "jest-transform-stub",
   },
 };
