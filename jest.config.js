@@ -4,8 +4,8 @@ module.exports = {
   clearMocks: true,
   testRegex: "/*.test.jsx$",
   collectCoverage: true,
-  coverageReporters: ["lcov"],
   coverageDirectory: "coverage",
+  verbose: true,
   coverageThreshold: {
     global: {
       branches: 0,

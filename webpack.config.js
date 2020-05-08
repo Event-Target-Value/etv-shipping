@@ -12,14 +12,14 @@ module.exports = {
           options: {
             presets: ['@babel/preset-env', '@babel/preset-react'],
             plugins: ['@babel/plugin-proposal-class-properties'],
-          }
-        }
-      }
-    ]
+          },
+        },
+      },
+    ],
   },
   output: {
     filename: 'bundle.js',
-    path: path.join(__dirname, '/client/dist')
+    path: path.join(__dirname, '/client/dist'),
   },
   resolve: {
     extensions: [".js", ".json", ".jsx", ".css"],

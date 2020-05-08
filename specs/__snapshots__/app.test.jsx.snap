@@ -7,10 +7,33 @@ exports[`<App /> React App functional and correctly rendering 1`] = `
   <h1>
     PRODUCT SHIPPING COMPONENT
   </h1>
-  <div>
+  <div
+    className="zip"
+  >
     Deliver to 
     94112
   </div>
+  <form
+    className="zipForm"
+    id="zipForm"
+    onSubmit={[Function]}
+  >
+    <label
+      htmlFor="zipcode"
+    >
+       Zip Code
+    </label>
+    <input
+      id="zipcode"
+      name="zipcode"
+      type="text"
+    />
+    <button
+      type="submit"
+    >
+      Submit
+    </button>
+  </form>
   <Modal
     closeModal={[Function]}
     product={Object {}}
