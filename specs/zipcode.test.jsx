@@ -10,7 +10,7 @@ describe('<Zipcode />', () => {
     //interface:
    //input - array of recommended products
    //output - some jsx containing Recoms
-    expect(wrapper.find;
+    expect(wrapper.find().length).toEqual();
   });
 });
 

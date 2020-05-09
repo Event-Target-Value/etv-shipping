@@ -17,6 +17,12 @@ h1 {
   position: center;
 }
 
+.App {
+  background-color: lightgrey;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+}
+
 
 .modal {
   width: 500px;
@@ -106,3 +112,31 @@ h1 {
   flex-direction: row;
 }
 
+.notAvailable {
+  color: orange
+}
+
+.sorry {
+  color: grey
+
+
+}
+
+.zipSubmit {
+  background-color: red;
+  color: white;
+}
+
+.showZip {
+  background-color: transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+}
+
+.useLocation {
+  background-color: transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+}

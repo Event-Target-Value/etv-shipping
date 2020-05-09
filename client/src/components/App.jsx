@@ -10,6 +10,7 @@ class App extends React.Component {
       product: {},
       currentZip: 94112,
       show: false,
+      zipMatch: false,
       showZip: false
     };
     this.closeModal = this.closeModal.bind(this);
@@ -18,6 +19,7 @@ class App extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.showZipcode = this.showZipcode.bind(this);
     this.closeZipcode = this.closeZipcode.bind(this);
+    this.setDefaultZip = this.setDefaultZip.bind(this);
   }
 
   componentDidMount() {
@@ -35,7 +37,10 @@ class App extends React.Component {
   }
 
   setProduct({data}) {
-    this.setState({product: data})
+    this.setState({product: data});
+    if (data.zip.includes(this.state.currentZip)) {
+      this.setState({zipMatch: true})
+    }
   };
 
   closeModal = e => {
@@ -65,6 +70,14 @@ class App extends React.Component {
     });
   };
 
+  setDefaultZip = e => {
+    e.preventDefault();
+    this.setState({
+      currentZip: 94112,
+      showZip: false
+    });
+  };
+
   handleSubmit(e) {
     e.preventDefault();
     if (isNaN(parseInt((document.getElementById("zipcode").value).slice(0,5)))) {
@@ -72,25 +85,35 @@ class App extends React.Component {
     } else {
     let newZip = parseInt((document.getElementById("zipcode").value).slice(0,5));
     this.setState({currentZip: newZip, showZip: false});
-    }
+      if ((this.state.product.zip).includes(newZip)) {
+        this.setState({zipMatch: true})
+      } else {
+        this.setState({zipMatch: false})
+      }
+    };
     // this.setState({currentZip: parseInt((event.target.value))})
   };
 
 
   render () {
+    let zmatch = this.state.zipMatch;
+    let date = new Date();
     return (
       <div className="App">
         <div className = "NonModal">
-          <h1>PRODUCT SHIPPING COMPONENT</h1>
           <div className = "zip">Deliver to {this.state.currentZip}</div>
           <button className = "showZip" id = "showZip" onClick = {e => {
             this.showZipcode(e)
-          }}>Edit zip code</button>
-          <Zipcode
+          }}><u>Edit zip code</u></button>
+          <Zipcode setDefaultZip = {this.setDefaultZip}
           handleSubmit = {this.handleSubmit} showZip = {this.state.showZip} closeZipcode = {this.closeZipcode}></Zipcode>
-          <button className = "showModal" id="showModal" onClick = {e => {
+          {zmatch ? <button className = "showModal" id="showModal" onClick = {e => {
             this.showModal(e)
-          }}> Ship it </button>
+          }}> Ship it </button> :
+          <div>
+          <div className = "notAvailable">not available</div>
+          <div className = "sorry">Sorry, this can't be shipped to your zip code.</div>
+          </div>}
         </div>
         <Modal className = "ModalOne" product={this.state.product} show={this.state.show} closeModal={this.closeModal}></Modal>
       </div>)

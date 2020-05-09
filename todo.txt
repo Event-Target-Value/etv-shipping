@@ -19,3 +19,6 @@ MAIN GOAL: Follow TDD to build carousel within modal
   - check that test fails
   - implement functionality
   - make sure it passes test
+
+
+  
