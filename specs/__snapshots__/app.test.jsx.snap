@@ -4,47 +4,43 @@ exports[`<App /> React App functional and correctly rendering 1`] = `
 <div
   className="App"
 >
-  <h1>
-    PRODUCT SHIPPING COMPONENT
-  </h1>
   <div
-    className="zip"
+    className="NonModal"
   >
-    Deliver to 
-    94112
-  </div>
-  <form
-    className="zipForm"
-    id="zipForm"
-    onSubmit={[Function]}
-  >
-    <label
-      htmlFor="zipcode"
+    <h1>
+      PRODUCT SHIPPING COMPONENT
+    </h1>
+    <div
+      className="zip"
     >
-       Zip Code
-    </label>
-    <input
-      id="zipcode"
-      name="zipcode"
-      type="text"
+      Deliver to 
+      94112
+    </div>
+    <button
+      className="showZip"
+      id="showZip"
+      onClick={[Function]}
+    >
+      Edit zip code
+    </button>
+    <Zipcode
+      closeZipcode={[Function]}
+      handleSubmit={[Function]}
+      showZip={false}
     />
     <button
-      type="submit"
+      className="showModal"
+      id="showModal"
+      onClick={[Function]}
     >
-      Submit
+       Ship it 
     </button>
-  </form>
+  </div>
   <Modal
+    className="ModalOne"
     closeModal={[Function]}
     product={Object {}}
     show={false}
   />
-  <button
-    className="showModal"
-    id="showModal"
-    onClick={[Function]}
-  >
-     Ship it 
-  </button>
 </div>
 `;

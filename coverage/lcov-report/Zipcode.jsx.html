@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for ModalOne.jsx</title>
+    <title>Code coverage report for Zipcode.jsx</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="prettify.css" />
     <link rel="stylesheet" href="base.css" />
@@ -19,34 +19,34 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="index.html">All files</a> ModalOne.jsx</h1>
+        <h1><a href="index.html">All files</a> Zipcode.jsx</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">66.67% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>2/3</span>
+                <span class='fraction'>0/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>1/2</span>
+                <span class='fraction'>0/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>1/1</span>
+                <span class='fraction'>0/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">66.67% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>2/3</span>
+                <span class='fraction'>0/4</span>
             </div>
         
             
@@ -55,7 +55,7 @@
             Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
         </p>
     </div>
-    <div class='status-line high'></div>
+    <div class='status-line low'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -75,23 +75,15 @@
 <a name='L16'></a><a href='#L16'>16</a>
 <a name='L17'></a><a href='#L17'>17</a>
 <a name='L18'></a><a href='#L18'>18</a>
-<a name='L19'></a><a href='#L19'>19</a>
-<a name='L20'></a><a href='#L20'>20</a>
-<a name='L21'></a><a href='#L21'>21</a>
-<a name='L22'></a><a href='#L22'>22</a>
-<a name='L23'></a><a href='#L23'>23</a>
-<a name='L24'></a><a href='#L24'>24</a>
-<a name='L25'></a><a href='#L25'>25</a>
-<a name='L26'></a><a href='#L26'>26</a>
-<a name='L27'></a><a href='#L27'>27</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L19'></a><a href='#L19'>19</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -101,39 +93,23 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React from "react";
-import Recoms from "./Recoms.jsx"
-import Carousel from "./Carousel.jsx"
 &nbsp;
-export default class Modal extends React.Component {
-  render() {
-    <span class="missing-if-branch" title="else path not taken" >E</span>if (!this.props.show) {
-      return null;
+&nbsp;
+export default class Zipcode extends React.Component {
+<span class="fstat-no" title="function not covered" >  re</span>nder() {
+<span class="cstat-no" title="statement not covered" >    if (!this.props.showZip) {</span>
+<span class="cstat-no" title="statement not covered" >      return null</span>
     }
 <span class="cstat-no" title="statement not covered" >    return (</span>
-      &lt;div className = "modal" id="modal"&gt;
-        &lt;div&gt;Added to cart&lt;/div&gt;
-        &lt;div&gt; Edit delivery method in cart&lt;/div&gt;
-        &lt;div&gt;${this.props.product.price}&lt;/div&gt;
-        &lt;img className ="productImage" src={this.props.product.image}&gt;&lt;/img&gt;
-        &lt;div className = "actions"&gt;
-          &lt;button className = "toggle-button" onClick = {this.props.closeModal}&gt;
-            Continue Shopping
-          &lt;/button&gt;
-          &lt;button className = "check-out"&gt;View cart &amp;amp; checkout&lt;/button&gt;
-        &lt;/div&gt;
-        FREQUENTLY BOUGHT TOGETHER
-        &lt;Carousel recommended = {this.props.product.recommended} &gt;&lt;/Carousel&gt;
-      &lt;/div&gt;
-    );
+    &lt;form id="zipForm" className="zipForm" onSubmit={<span class="fstat-no" title="function not covered" >e </span>=&gt; {<span class="cstat-no" title="statement not covered" >this.props.handleSubmit(e)}</span>}&gt;
+      &lt;label htmlFor="zipcode"&gt; Zip Code&lt;/label&gt;
+      &lt;input type="text" pattern="[0-9]*" name="zipcode" id="zipcode" /&gt;
+      &lt;button className ="zipSubmit" type="submit"&gt;Submit&lt;/button&gt;
+      &lt;button className = "zipClose" onClick = {this.props.closeZipcode}&gt; Cancel&lt;/button&gt;
+      &lt;div&gt;We’ll show updated delivery options for your area&lt;/div&gt;
+    &lt;/form&gt;
+    )
   }
 }</pre></td></tr></table></pre>
 

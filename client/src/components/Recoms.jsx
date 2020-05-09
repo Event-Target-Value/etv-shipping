@@ -1,10 +1,10 @@
 import React from "react";
 
 const Recoms= (props) => (
-  <div>
+  <div className = "singleProduct">
   <img className="recomImage" src={props.oneRecom.recImage}></img>
-  {props.oneRecom.name}
-  &emsp; ${props.oneRecom.price}
+  <span>${props.oneRecom.price}</span>
+  <span>{props.oneRecom.name}</span>
   </div>
 )
 
@@ -16,4 +16,5 @@ const Recoms= (props) => (
 
 
 //refactor Recoms to > Recommendations
+
 export default Recoms;

@@ -30,6 +30,7 @@
     "jquery": "^3.5.0",
     "mongoose": "^5.9.10",
     "mysql": "^2.18.1",
+    "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-modal": "^3.11.2",
