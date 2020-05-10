@@ -41,6 +41,7 @@ const Modal = styled.div`
     outline: 0;
   }
   .box-dialog {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     z-index: 1050;
     width: 140%;
     background-color: #fefefe;
@@ -50,6 +51,7 @@ const Modal = styled.div`
       width: 100%;
     }
     .box-header {
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
       height: 48px;
       padding: 8px 24px;
       display: flex;
@@ -57,11 +59,13 @@ const Modal = styled.div`
       align-items: center;
       border-bottom: 1px solid #c7c7c7;
       .box-title {
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
         font-size: 24px;
         font-weight: 400;
         margin: 0 0 0 0;
       }
       .x-close {
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
         font-size: 35px;
         line-height: 35px;
         font-weight: 400;
@@ -74,12 +78,14 @@ const Modal = styled.div`
       }
     }
     .box-body {
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
       font-size: 14px;
       padding: 0px;
       width: auto;
       height: auto;
     }
     .box-footer {
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
       height: 48px;
       padding: 0px 24px;
       display: flex;
@@ -96,12 +102,14 @@ const Modal = styled.div`
   }
 
   .actions {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     border-top: 1px solid #ccc;
     background: #eee;
     padding: 0.5rem 1rem;
   }
 
   .actions button {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     border: 0;
     background: red;
     color: white;
@@ -112,6 +120,7 @@ const Modal = styled.div`
   }
 
   .modal {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     width: 500px;
     background: white;
     border: 1px solid #ccc;
@@ -125,6 +134,19 @@ const Modal = styled.div`
     opacity: 1;
     visibility: visible;
   }
+
+  .frequentlyBought {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .check-out {
+    margin-left: 10px;
+    width: 250px;
+    height: 40px;
+  }
+
 
 
 `;

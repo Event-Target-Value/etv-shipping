@@ -68,7 +68,9 @@ class Modal extends React.Component {
             </button>
             <button className = "check-out">View cart &amp; checkout</button>
           </div>
+          <div className="frequentlyBought">
           FREQUENTLY BOUGHT TOGETHER
+          </div>
           <Carousel recommended = {this.props.product.recommended} ></Carousel>
         </div >
         <div className={`background`}
