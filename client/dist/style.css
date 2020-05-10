@@ -1,3 +1,4 @@
+
 html,
 body {
   height: 100%;
@@ -16,11 +17,17 @@ h1 {
   position: center;
 }
 
-.mainProduct {
-  max-width: 60%;
-  height: auto;
-  position: center;
+#app {
+  width: 400px;
+  height: 400px;
 }
+
+.App {
+  background-color: lightgrey;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  border-radius: 5px;
+}
+
 
 .modal {
   width: 500px;
@@ -75,8 +82,7 @@ h1 {
 }
 
 
-#showModal {
-  position: center;
+.showModal {
   display: flex;
   border: 0;
   background: red;
@@ -85,10 +91,178 @@ h1 {
   padding: 0.5rem 1rem;
   font-size: 0.8rem;
   line-height: 1;
+  cursor: pointer;
+}
+
+.showModal:active {
+  background: darkred;
+  color: lightgray;
+  -webkit-transform: translateY(-1px);
+  transform: translateY(-1px);
+box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+@-webkit-keyframes showModal {
+  100% {
+    top: -12px;
+    right: -12px;
+    bottom: -12px;
+    left: -12px;
+    opacity: 0;
+  }
+}
+@keyframes showModal {
+  100% {
+    top: -12px;
+    right: -12px;
+    bottom: -12px;
+    left: -12px;
+    opacity: 0;
+  }
+}
+.showModal {
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  position: relative;
+}
+.showModal:before {
+  content: '';
+  position: absolute;
+  border: red solid 1px;
+  border-radius: 5px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+}
+.showModal:hover:before,
+.showModal:focus:before,
+.showModal:active:before {
+  -webkit-animation-name: showModal;
+  animation-name: showModal;
+}
+
+
+.toggle-button {
+  display: inline-block;
+  width: 250px;
+  height: 40px;
+  border: 0;
+  background: red;
+  color: white;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  font-size: 0.8rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.toggle-button:active {
+  background: darkred;
+  color: lightgray;
+  -webkit-transform: translateY(-1px);
+  transform: translateY(-1px);
+box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+@-webkit-keyframes toggle-button {
+  100% {
+    top: -12px;
+    right: -12px;
+    bottom: -12px;
+    left: -12px;
+    opacity: 0;
+  }
+}
+@keyframes toggle-button {
+  100% {
+    top: -12px;
+    right: -12px;
+    bottom: -12px;
+    left: -12px;
+    opacity: 0;
+  }
+}
+.toggle-button {
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  position: relative;
+}
+.toggle-button:before {
+  content: '';
+  position: absolute;
+  border: red solid 1px;
+  border-radius: 5px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+}
+.toggle-button:hover:before,
+.toggle-button:focus:before,
+.toggle-button:active:before {
+  -webkit-animation-name: toggle-button;
+  animation-name: toggle-button;
 }
 
 .recomImage {
-  max-width: 10%;
-  height: auto;
+  max-width: 200px;
+  width: 200px;
 }
 
+.singleProduct {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.recoms {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.innerRecs{
+  display: flex;
+  position: relative;
+  flex-direction: row;
+}
+
+.notAvailable {
+  color: darkorange
+}
+
+.sorry {
+  color: #555555
+
+
+}
+
+.zipSubmit {
+  background-color: red;
+  color: white;
+}
+
+.showZip {
+  background-color: transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+}
+
+.useLocation {
+  background-color: transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+}

@@ -1,34 +1,85 @@
 import React from "react";
+import ReactDOM from "react-dom"
 import Recoms from "./Recoms.jsx"
+import Carousel from "./Carousel.jsx"
+import PropTypes from "prop-types"
+import StyledModal from "./Modal.css.js"
 
+const modalRoot = document.getElementById("modal-root");
 
-export default class Modal extends React.Component {
-  onClose = e => {
-    this.props.onClose && this.props.onClose(e);
+class Modal extends React.Component {
+  static defaultProps = {
+    id: "",
+    modalClass:"",
+    modalSize: "md"
   };
-  render() {
-    if (!this.props.show) {
-      return null;
+
+  static propTypes = {
+    id: PropTypes.string.isRequired,
+    closeModal: PropTypes.func.isRequired,
+    show: PropTypes.bool.isRequired,
+    product: PropTypes.object.isRequired,
+    className: PropTypes.string.isRequired,
+    modalClass: PropTypes.string,
+    modalSize: PropTypes.string
+  };
+
+  state = {
+    fadeType: null
+  }
+
+  background = React.createRef();
+
+
+  transitionEnd = e => {
+    if (e.propertyName !== "opacity" || this.state.fadeType === "in") return;
+    if (this.state.fadeType === "out") {
+      this.props.closeModal();
     }
-    return (
-      <div className = "modal" id="modal">
-        <div>Added to cart</div>
-        <div> Edit delivery method in cart</div>
-        <div>${this.props.product.price}</div>
-        <img className ="productImage" src={this.props.product.image}></img>
-        <div className ="content">{this.props.children}</div>
-        <div className = "actions">
-          <button className = "toggle-button" onClick = {this.props.closeModal}>
-            Continue Shopping
-          </button>
-          <button className = "check-out">View cart &amp; checkout</button>
-        </div>
-        <div className = "recoms">
+  };
+
+  componentDidMount() {
+    window.addEventListener("keydown", this.onEscKeyDown, false);
+    setTimeout(() => this.setState({ fadeType: "in" }), 0);
+  }
+
+
+
+  handleClick = e => {
+    e.preventDefault();
+    this.setState({ fadeType: "out" });
+  };
+
+  render() {
+    return ReactDOM.createPortal(
+      <StyledModal id={this.props.id}
+      role="dialog"
+      className = {`wrapper ${"size" + this.props.modalSize} fade-${this.state.fadeType} ${this.props.modalClass}`}
+      modalSize = {this.props.modalSize}
+      onTransitionEnd = {this.transitionEnd} >
+        <div className = "modal" className="box-dialog">
+          <div>Added to cart</div>
+          <div> Edit delivery method in cart</div>
+          <div>${this.props.product.price}</div>
+          <img className ="productImage" src={this.props.product.image}></img>
+          <div className = "actions">
+            <button className = "toggle-button" onClick = {this.handleClick}>
+              Continue Shopping
+            </button>
+            <button className = "check-out">View cart &amp; checkout</button>
+          </div>
+          <div className="frequentlyBought">
           FREQUENTLY BOUGHT TOGETHER
-        {this.props.product.recommended.map((oneRecom) =>
-        <Recoms key={oneRecom._id} oneRecom={oneRecom} product= {this.props.product}/>)}
-        </div>
-      </div>
+          </div>
+          <Carousel recommended = {this.props.product.recommended} ></Carousel>
+        </div >
+        <div className={`background`}
+          onMouseDown={this.handleClick}
+          ref={this.background}/>
+      </StyledModal>,
+      modalRoot
     );
   }
 }
+
+export default Modal;
