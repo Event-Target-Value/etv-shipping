@@ -23,7 +23,8 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    this.getProduct(Math.floor(Math.random() * (101 - 1) + 1));
+    // this.getProduct(Math.floor(Math.random() * (101 - 1) + 1));
+    this.getProduct(45);
   }
 
   handleError(error) {
@@ -76,7 +77,14 @@ class App extends React.Component {
       currentZip: 94112,
       showZip: false
     });
+    if ((this.state.product.zip).includes(94112)) {
+      this.setState({zipMatch: true})
+    } else {
+      this.setState({zipMatch: false})
+    }
   };
+
+
 
   handleSubmit(e) {
     e.preventDefault();
@@ -97,7 +105,6 @@ class App extends React.Component {
 
   render () {
     let zmatch = this.state.zipMatch;
-    let date = new Date();
     return (
       <div className="App">
         <div className = "NonModal">
@@ -115,7 +122,10 @@ class App extends React.Component {
           <div className = "sorry">Sorry, this can't be shipped to your zip code.</div>
           </div>}
         </div>
-        <Modal className = "ModalOne" product={this.state.product} show={this.state.show} closeModal={this.closeModal}></Modal>
+        {this.state.show && (
+        <Modal id="modal" class = "my-class" className = "ModalOne" product={this.state.product} show={this.state.show} closeModal={this.closeModal}>
+        </Modal>
+        )}
       </div>)
   }
 }
