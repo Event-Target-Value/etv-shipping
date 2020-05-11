@@ -1,12 +1,21 @@
 import React from "react";
 
-const Recoms= (props) => (
-  <div className = "singleProduct">
-  <img className="recomImage" src={props.oneRecom.recImage}></img>
-  <span>${props.oneRecom.price}</span>
-  <span>{props.oneRecom.name}</span>
-  </div>
-)
+class Recoms extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return (
+    <div className = "singleProduct">
+    <img className="recomImage" src={this.props.oneRecom.recImage}></img>
+    <span>${this.props.oneRecom.price}</span>
+    <span>{this.props.oneRecom.name}</span>
+    </div>
+    )
+  }
+}
+
+
 
 
 // Overflow-x: hidden 

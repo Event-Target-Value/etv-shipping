@@ -31,7 +31,7 @@ class Modal extends React.Component {
   background = React.createRef();
 
 
-  transitionEnd = e => {
+  transitionEnd = (e) => {
     if (e.propertyName !== "opacity" || this.state.fadeType === "in") return;
     if (this.state.fadeType === "out") {
       this.props.closeModal();
@@ -43,9 +43,7 @@ class Modal extends React.Component {
     setTimeout(() => this.setState({ fadeType: "in" }), 0);
   }
 
-
-
-  handleClick = e => {
+  handleClick = (e) => {
     e.preventDefault();
     this.setState({ fadeType: "out" });
   };
@@ -58,9 +56,9 @@ class Modal extends React.Component {
       modalSize = {this.props.modalSize}
       onTransitionEnd = {this.transitionEnd} >
         <div className = "modal" className="box-dialog">
-          <div>Added to cart</div>
-          <div> Edit delivery method in cart</div>
-          <div>${this.props.product.price}</div>
+          <div className = "Added1" ><b>Added to cart</b></div>
+          <div className = "Added2"> Edit delivery method in cart</div>
+          <div className = "AddedPrice">${this.props.product.price}</div>
           <img className ="productImage" src={this.props.product.image}></img>
           <div className = "actions">
             <button className = "toggle-button" onClick = {this.handleClick}>
@@ -69,7 +67,7 @@ class Modal extends React.Component {
             <button className = "check-out">View cart &amp; checkout</button>
           </div>
           <div className="frequentlyBought">
-          FREQUENTLY BOUGHT TOGETHER
+          <b>Frequently bought together</b>
           </div>
           <Carousel recommended = {this.props.product.recommended} ></Carousel>
         </div >

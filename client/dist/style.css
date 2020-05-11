@@ -18,7 +18,7 @@ h1 {
 }
 
 #app {
-  width: 400px;
+  width: 300px;
   height: 400px;
 }
 
@@ -232,11 +232,6 @@ box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
   cursor: pointer;
 }
 
-.innerRecs{
-  display: flex;
-  position: relative;
-  flex-direction: row;
-}
 
 .notAvailable {
   color: darkorange

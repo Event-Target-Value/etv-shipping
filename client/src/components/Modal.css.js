@@ -102,9 +102,11 @@ const Modal = styled.div`
   }
 
   .actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    border-top: 1px solid #ccc;
-    background: #eee;
+    background: white;
     padding: 0.5rem 1rem;
   }
 
@@ -115,8 +117,9 @@ const Modal = styled.div`
     color: white;
     border-radius: 5px;
     padding: 0.5rem 1rem;
-    font-size: 0.8rem;
+    font-size: 16px;
     line-height: 1;
+    cursor: pointer;
   }
 
   .modal {
@@ -139,6 +142,7 @@ const Modal = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: 25px;
   }
 
   .check-out {
@@ -147,8 +151,24 @@ const Modal = styled.div`
     height: 40px;
   }
 
+.Added1 {
+  font-size: 22px;
+  margin-left: 20px;
+  margin-top: 20px;
+}
 
+.Added2 {
+  font-size: 18px;
+  margin-left: 20px;
+}
+
+.AddedPrice {
+  font-size: 18px;
+  font-weight: bold;
+  margin-left: 20px;
+}
 
 `;
+
 
 export default Modal;

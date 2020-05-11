@@ -44,34 +44,33 @@ class App extends React.Component {
     }
   };
 
-  closeModal = e => {
+  closeModal = (e) => {
     this.setState({
       show: false
     });
   };
 
-  showModal = e => {
+  showModal = (e) => {
     this.setState({
       show: true
     });
   };
 
-
-  showZipcode = e => {
+  showZipcode = (e) => {
     e.preventDefault();
     this.setState({
       showZip: true
     });
   };
 
-  closeZipcode = e => {
+  closeZipcode = (e) => {
     e.preventDefault();
     this.setState({
       showZip:false
     });
   };
 
-  setDefaultZip = e => {
+  setDefaultZip = (e) => {
     e.preventDefault();
     this.setState({
       currentZip: 94112,
@@ -84,11 +83,10 @@ class App extends React.Component {
     }
   };
 
-
-
   handleSubmit(e) {
     e.preventDefault();
-    if (isNaN(parseInt((document.getElementById("zipcode").value).slice(0,5))) || ((document.getElementById("zipcode").value)).length < 5) {
+    if (isNaN(parseInt((document.getElementById("zipcode").value).slice(0,5))) ||
+      ((document.getElementById("zipcode").value)).length < 5) {
       alert("Please enter a 5 digit zip code")
     } else {
     let newZip = parseInt((document.getElementById("zipcode").value).slice(0,5));
@@ -102,9 +100,8 @@ class App extends React.Component {
     // this.setState({currentZip: parseInt((event.target.value))})
   };
 
-
   render () {
-    let zmatch = this.state.zipMatch;
+    const zmatch = this.state.zipMatch;
     return (
       <div className="App">
         <div className = "NonModal">
@@ -125,7 +122,7 @@ class App extends React.Component {
           </div>}
         </div>
         {this.state.show && (
-        <Modal id="modal" class = "my-class" className = "ModalOne" product={this.state.product} show={this.state.show} closeModal={this.closeModal}>
+        <Modal id="modal" className = "ModalOne" product={this.state.product} show={this.state.show} closeModal={this.closeModal}>
         </Modal>
         )}
       </div>)
