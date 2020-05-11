@@ -56,10 +56,10 @@ class Modal extends React.Component {
       modalSize = {this.props.modalSize}
       onTransitionEnd = {this.transitionEnd} >
         <div className = "modal" className="box-dialog">
-          <div className = "Added1" ><b>Added to cart</b></div>
-          <div className = "Added2"> Edit delivery method in cart</div>
-          <div className = "AddedPrice">${this.props.product.price}</div>
           <img className ="productImage" src={this.props.product.image}></img>
+          <div className = "Added1 guy" ><b>Added to cart</b></div>
+          <div className = "Added2 guy"> Edit delivery method in cart</div>
+          <div className = "AddedPrice guy">${this.props.product.price}</div>
           <div className = "actions">
             <button className = "toggle-button" onClick = {this.handleClick}>
               Continue Shopping

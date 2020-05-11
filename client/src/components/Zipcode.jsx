@@ -10,11 +10,11 @@ export default class Zipcode extends React.Component {
     <div>
       <button onClick = {this.props.setDefaultZip} className = "useLocation"><u>Use my current location</u></button>
       <form id = "zipForm" className = "zipForm" onSubmit={e => {this.props.handleSubmit(e)}}>
-        <label htmlFor = "zipcode"> Zip Code</label>
+        <label htmlFor = "zipcode"> Enter zipcode:</label>
         <input type = "text" pattern="[0-9]*" name = "zipcode" id = "zipcode"/>
         <button className = "zipSubmit" type = "submit">Submit</button>
         <button className = "zipClose" onClick = {this.props.closeZipcode}> Cancel</button>
-        <div>We’ll show updated delivery options for your area</div>
+        <div className = "deliveryOptions"> We’ll show updated delivery options for your area</div>
       </form>
     </div>
     )

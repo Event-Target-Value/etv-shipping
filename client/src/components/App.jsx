@@ -23,8 +23,8 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    // this.getProduct(Math.floor(Math.random() * (101 - 1) + 1));
-    this.getProduct(45);
+    this.getProduct(Math.floor(Math.random() * (101 - 1) + 1));
+    // this.getProduct(45);
   }
 
   handleError(error) {

@@ -16,7 +16,7 @@ class Carousel extends React.Component {
   leftSlide = () => {
     let innerSliderVar = this.state.innerSlider;
     this.setState({
-      innerSlider: Math.max(innerSliderVar + 262,0)
+      innerSlider: innerSliderVar + 500
     })
     console.log('TEST')
   }
@@ -24,7 +24,7 @@ class Carousel extends React.Component {
   rightSlide = () => {
     let innerSliderVar = this.state.innerSlider;
     this.setState({
-      innerSlider: innerSliderVar - 262
+      innerSlider: innerSliderVar - 500
     })
   }
 
@@ -35,8 +35,8 @@ class Carousel extends React.Component {
     return (
       <StyledCarousel>
       <div className = "recoms">
-        <button onClick = {this.leftSlide}> RIGHT </button>
-        <button onClick = {this.rightSlide}> LEFT </button>
+        <button className = "LEFTslidyboi" onClick = {this.leftSlide}> L </button>
+        <button className = "RIGHTslidyboi" onClick = {this.rightSlide}> R </button>
         <InnerRecs offset = {slider}>
         {this.props.recommended.map((oneRecom) =>
         <Recoms key={oneRecom._id} oneRecom={oneRecom} />)}
