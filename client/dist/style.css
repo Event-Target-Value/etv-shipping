@@ -19,13 +19,14 @@ h1 {
 
 #app {
   width: 400px;
-  height: 400px;
+  height: 500px;
 }
 
 .App {
   background-color: lightgrey;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   border-radius: 5px;
+  padding: 16px 12px
 }
 
 
@@ -83,9 +84,12 @@ h1 {
 
 
 .showModal {
-  display: flex;
+  display: row;
+  margin-left: 180px;
+  justify-content: flex-end;
   border: 0;
-  background: red;
+  width: 200px;
+  background: rgb(204,0,0);
   color: white;
   border-radius: 5px;
   padding: 0.5rem 1rem;
@@ -95,7 +99,7 @@ h1 {
 }
 
 .showModal:active {
-  background: darkred;
+  background: rgb(204,0,0);
   color: lightgray;
   -webkit-transform: translateY(-1px);
   transform: translateY(-1px);
@@ -130,7 +134,7 @@ box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 .showModal:before {
   content: '';
   position: absolute;
-  border: red solid 1px;
+  border: rgb(204,0,0) solid 1px;
   border-radius: 5px;
   top: 0;
   right: 0;
@@ -232,11 +236,6 @@ box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
   cursor: pointer;
 }
 
-.innerRecs{
-  display: flex;
-  position: relative;
-  flex-direction: row;
-}
 
 .notAvailable {
   color: darkorange
@@ -251,6 +250,8 @@ box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 .zipSubmit {
   background-color: red;
   color: white;
+  border-radius: 4px;
+  font-size: 12px;
 }
 
 .showZip {
@@ -258,6 +259,7 @@ box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
   background-repeat: no-repeat;
   border: none;
   cursor: pointer;
+  font-size: 18px;
 }
 
 .useLocation {
@@ -265,4 +267,32 @@ box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
   background-repeat: no-repeat;
   border: none;
   cursor: pointer;
+  font-size: 15px;
+  padding: 10px 10px 10px 10px
+}
+
+.zip {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.zipcode {
+  font-size: 20px;
+  border-radius: 3px;
+}
+
+.zipClose {
+  font-size: 12px;
+}
+
+.zipForm {
+  padding: 10px 10px 10px 10px
+}
+
+.deliveryOptions {
+  padding: 10px 10px 10px 10px
+}
+
+.productAdded {
+
 }

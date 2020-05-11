@@ -9,10 +9,13 @@ const Carousel = styled.div`
   overflow: hidden;
 }
 
-.innerRecs{
-  display: flex;
-  position: relative;
-  flex-direction: row;
+
+.LEFTslidyboi {
+  z-index: 1051;
+}
+
+.RIGHTslidyboi {
+  z-index: 1051;
 }
 
 `;
