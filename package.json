@@ -5,9 +5,11 @@
   "main": "index.js",
   "scripts": {
     "test": "jest --config ./jest.config.js",
-    "build-r": "webpack -d --watch",
+    "build:dev": "webpack -d --watch",
+    "build": "webpack -p",
     "react-server": "live-server",
-    "start": "nodemon server/index.js",
+    "start:dev": "nodemon server/index.js",
+    "start": "node server/index.js",
     "seed": "node server/db/seeder.js",
     "testing": "jest"
   },
@@ -29,6 +31,7 @@
     "jest": "^26.0.1",
     "jquery": "^3.5.0",
     "mongoose": "^5.9.10",
+    "morgan": "^1.10.0",
     "mysql": "^2.18.1",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",

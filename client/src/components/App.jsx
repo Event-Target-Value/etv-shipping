@@ -23,8 +23,8 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    this.getProduct(Math.floor(Math.random() * (101 - 1) + 1));
-    // this.getProduct(45);
+    // this.getProduct(Math.floor(Math.random() * (101 - 1) + 1));
+    this.getProduct(45);
   }
 
   handleError(error) {
@@ -32,7 +32,8 @@ class App extends React.Component {
   }
 
   getProduct(id) {
-    axios.get(`/findProduct/${id}`)
+    //origin / shipping/findproduct
+    axios.get(`/shipping/findProduct/${id}`)
     .then(this.setProduct)
     .catch(this.handleError)
   }
