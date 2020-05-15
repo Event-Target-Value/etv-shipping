@@ -5,9 +5,11 @@
   "main": "index.js",
   "scripts": {
     "test": "jest --config ./jest.config.js",
-    "build-r": "webpack -d --watch",
+    "build:dev": "webpack -d --watch",
+    "build": "webpack -p",
     "react-server": "live-server",
-    "start": "nodemon server/index.js",
+    "start:dev": "nodemon server/index.js",
+    "start": "node server/index.js",
     "seed": "node server/db/seeder.js",
     "testing": "jest"
   },
