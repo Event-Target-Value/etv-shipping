@@ -4,6 +4,10 @@ mongoose.connect('mongodb://localhost/target', { useNewUrlParser: true, useUnifi
 
 const db = mongoose.connection;
 
+db.once('open', function() {
+  console.log('CONNECTED TO MONGO DATABASE')
+});
+
 // /products/:id
 const productSchema = mongoose.Schema({
   productId: Number,
